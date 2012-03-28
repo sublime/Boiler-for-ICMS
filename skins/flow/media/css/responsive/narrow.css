@@ -1,0 +1,7 @@
+#nav-toggle {
+  display: none;
+}
+
+nav#primary-navigation {
+  display: block !important;
+}

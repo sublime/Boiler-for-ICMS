@@ -1,0 +1,14 @@
+<{if $ishome}>
+  <link rel="stylesheet" href="<{$icms_imageurl}>skins/<{$skin}>/media/flexslider/flexslider.css">
+  <script type="text/javascript" src="<{$icms_imageurl}>skins/<{$skin}>/media/flexslider/jquery.flexslider-min.js"></script>
+  <script type="text/javascript">
+    $(window).load(function() {
+      $('.flexslider').flexslider({
+            animation: "random",
+            directionNav: false,
+            controlNav: false,
+            keyboardNav: false,
+      });
+    });
+  </script>
+<{/if}>

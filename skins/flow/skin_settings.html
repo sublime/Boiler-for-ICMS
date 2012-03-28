@@ -1,0 +1,34 @@
+<{*
+ *
+ * Skin Settings File - Use this to override default settings.
+ *
+*}>
+
+<{************** Skin Settings **************}>
+<{assign var=enable_responsive value=1}>
+
+<{************** Block Logic **************}>
+<{if $xoBlocks.canvas_left && $xoBlocks.canvas_right}>
+  <{assign var=content_grid value='6'}>
+<{elseif $xoBlocks.canvas_left && !$xoBlocks.canvas_right || !$xoBlocks.canvas_left && $xoBlocks.canvas_right}>
+  <{assign var=content_grid value='9'}>
+<{else}>
+  <{assign var=content_grid value='12'}>
+<{/if}>
+
+<{************** Slider Settings **************}>
+<{if $ishome}>
+  <{assign var=show_preface value=1}>
+  <{assign var=use_preface_override_file value="$theme_name/skins/$skin/html/preface.html"}>
+
+  <{assign var=add_meta value=1}>
+<{else}>
+  <{assign var=show_preface value=0}>
+<{/if}>
+
+<{************** Header Settings **************}>
+<{assign var=show_sitename value=0}>
+<{assign var=show_slogan value=0}>
+
+
+

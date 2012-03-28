@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="<{$icms_langcode}>"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="<{$icms_langcode}>"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="<{$icms_langcode}>"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="<{$icms_langcode}>"> <!--<![endif]-->
+<head>
+  <{includeq file="$theme_name/html/meta.html"}>
+</head>
+<body>
+  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
+       chromium.org/developers/how-tos/chrome-frame-getting-started -->
+  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->  
+  
+  <{includeq file="$theme_name/html/header.html"}>
+  <{includeq file="$theme_name/html/page.html"}>
+  <{includeq file="$theme_name/html/footer.html"}>
+
+  <{if $enable_concatenate}>
+      <script src="<{$icms_url}>/boiler.php?type=script&amp;f=media/js/plugins.js,media/js/script.js"></script>
+  <{else}>
+    <script src="<{$icms_imageurl}>media/js/plugins.js"></script>
+    <script src="<{$icms_imageurl}>media/js/script.js"></script>
+  <{/if}>
+</body>
+</html>

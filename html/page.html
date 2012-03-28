@@ -1,0 +1,267 @@
+<div id="page" class="clearfix">
+  <{if $show_preface && preface_blockzone != '' || $use_preface_override_file != ''}>
+    <div id="preface_wrapper" class="clearfix">
+        <{if $use_preface_override_file != ''}>
+          <{includeq file="$use_preface_override_file"}>
+        <{else}>
+          <div id="preface" class="container_<{$grid_columns}>">
+            <{if $preface_block_id == ''}>
+              <{foreach from=$xoBlocks.$preface_blockzone item=block}>
+                <div id="preface_block_<{$block.id}>" class="block grid_<{$preface_grid}> <{$preface_grid_extra_classes}>">
+                  <div class="block_inner">                  
+                    <{if $show_preface_block_titles && $block.title != ''}>
+                      <h3><{$block.title}></h3>
+                    <{/if}>
+                    <{if $block.content}>
+                      <div class="preface_content block_content">
+                        <{$block.content}>
+                      </div>
+                    <{/if}>
+                  </div>
+                </div>
+              <{/foreach}>
+            <{else}>
+              <div id="single_preface_block preface_block_<{$preface_block_id}>" class="block grid_<{$preface_grid}> <{$preface_grid_extra_classes}>">
+                <div class="block_inner">
+                  <{if $show_preface_block_titles && $xoBlocks.$preface_blockzone.$preface_block_id.title}>
+                    <h3><{$xoBlocks.$preface_blockzone.$preface_block_id.title}>}>
+                  <{/if}>
+                  <{if $xoBlocks.$preface_blockzone.$preface_block_id.content}>
+                    <div class="preface_content block_content">
+                      <{$xoBlocks.$preface_blockzone.$preface_block_id.content}>
+                    </div>
+                  <{/if}>
+                </div>
+              </div>
+            <{/if}>
+          </div>
+        <{/if}>
+    </div>
+  <{/if}>
+
+  <div id="main_wrapper" class="clearfix">
+    <div id="main" role="main" class="container_<{$grid_columns}>">
+
+      <{if $show_leftblocks}>
+        <aside id="leftside_wrapper" class="grid_<{$leftcolumn_grid}> <{$leftcolumn_grid_extra_classes}>">
+          <div id="leftside">
+            <{foreach from=$xoBlocks.canvas_left item=block}>
+              <div id="leftside_block_<{$block.id}>" class="block">
+                <div class="block_inner">
+                  <{if $block.title != ''}>
+                    <h3><{$block.title}></h3>
+                  <{/if}>
+                  <{if $block.content}>
+                    <div class="leftblock_content block_content clearfix">
+                      <{$block.content}>
+                    </div>
+                  <{/if}>
+                </div>
+              </div>
+            <{/foreach}>
+          </div>
+        </aside>
+      <{/if}>
+
+      <div id="content_wrapper" class="grid_<{$content_grid}> <{$content_grid_extra_classes}>">
+
+        <{if $show_topblocks_in_content}>
+          <div id="top_blocks_wrapper" >
+            <div id="topblocks">
+
+              <{if $xoBlocks.page_topleft}>
+                <div id="topleft_blocks" class="grid_<{$topleft_grid}> <{$topleft_grid_extra_classes}>">
+                  <{foreach from=$xoBlocks.page_topleft item=block}>
+                    <div id="topleft_block_<{$block.id}>" class="block">
+                      <div class="block_inner">
+                        <{if $block.title != ''}>
+                          <h3><{$block.title}></h3>
+                        <{/if}>
+                        <{if $block.content}>
+                          <div class="topleftblock_content block_content">
+                            <{$block.content}>
+                          </div>
+                        <{/if}>
+                      </div>
+                    </div>
+                  <{/foreach}>
+                </div>
+              <{/if}>
+
+              <{if $xoBlocks.page_topright}>
+                <div id="topright_blocks" class="grid_<{$topright_grid}> <{$topright_grid_extra_classes}>">
+                  <{foreach from=$xoBlocks.page_topright item=block}>
+                    <div id="topright_block_<{$block.id}>" class="block">
+                      <div class="block_inner">
+                        <{if $block.title != ''}>
+                          <h3><{$block.title}></h3>
+                        <{/if}>
+                        <{if $block.content}>
+                          <div class="toprightblock_content block_content">
+                            <{$block.content}>
+                          </div>
+                        <{/if}>
+                      </div>
+                    </div>
+                  <{/foreach}>
+                </div>
+              <{/if}>
+
+              <{if $xoBlocks.page_topcenter}>
+                <div id="topcenter_blocks" class="grid_<{$topcenter_grid}> <{$topcenter_grid_extra_classes}>">
+                  <{foreach from=$xoBlocks.page_topcenter item=block}>
+                    <div id="topcenter_block_<{$block.id}>" class="block">
+                      <div class="block_inner">
+                        <{if $block.title != ''}>
+                          <h3><{$block.title}></h3>
+                        <{/if}>
+                        <{if $block.content}>
+                          <div class="topcenterblock_content block_content">
+                            <{$block.content}>
+                          </div>
+                        <{/if}>
+                      </div>
+                    </div>
+                  <{/foreach}>
+                </div>
+              <{/if}>
+
+            </div>
+          </div>
+        <{/if}>
+
+        <{if $icms_contents}>
+          <div id="content" class="grid_<{$content_grid}> <{$content_grid_extra_classes}>">
+            <div class="content_inner">
+              <{$icms_contents}>
+            </div>
+          </div>
+        <{/if}>
+
+        <{if $show_bottomblocks_in_content}>
+          <div id="bottom_blocks_wrapper">
+            <div id="bottomblocks" class="clearfix">
+
+              <{if $xoBlocks.page_bottomcenter}>
+                <div id="bottomcenter_blocks" class="grid_<{$bottomcenter_grid}> <{$bottomcenter_grid_extra_classes}>">
+                  <{foreach from=$xoBlocks.page_bottomcenter item=block}>
+                    <div id="bottomcenter_block_<{$block.id}>" class="block">
+                      <div class="block_inner">
+                        <{if $block.title != ''}>
+                          <h3><{$block.title}></h3>
+                        <{/if}>
+                        <{if $block.content}>
+                          <div class="bottomcenterblock_content block_content">
+                            <{$block.content}>
+                          </div>
+                        <{/if}>
+                      </div>
+                    </div>
+                  <{/foreach}>
+                </div>
+              <{/if}>
+
+              <{if $xoBlocks.page_bottomleft}>
+                <div id="bottomleft_blocks" class="grid_<{$bottomleft_grid}> <{$bottomleft_grid_extra_classes}>">
+                  <{foreach from=$xoBlocks.page_bottomleft item=block}>
+                    <div id="bottomleft_block_<{$block.id}>" class="block">
+                      <div class="block_inner">
+                        <{if $block.title != ''}>
+                          <h3><{$block.title}></h3>
+                        <{/if}>
+                        <{if $block.content}>
+                          <div class="bottomleftblock_content block_content">
+                            <{$block.content}>
+                          </div>
+                        <{/if}>
+                      </div>
+                    </div>
+                  <{/foreach}>
+                </div>
+              <{/if}>
+
+              <{if $xoBlocks.page_topright}>
+                <div id="bottomright_blocks" class="grid_<{$bottomright_grid}> <{$bottomright_grid_extra_classes}>">
+                  <{foreach from=$xoBlocks.page_bottomright item=block}>
+                    <div id="bottomright_block_<{$block.id}>" class="block">
+                      <div class="block_inner">
+                        <{if $block.title != ''}>
+                          <h3><{$block.title}></h3>
+                        <{/if}>
+                        <{if $block.content}>
+                          <div class="bottomrightblock_content block_content">
+                            <{$block.content}>
+                          </div>
+                        <{/if}>
+                      </div>
+                    </div>
+                  <{/foreach}>
+                </div>
+              <{/if}>
+
+            </div>
+          </div>
+        <{/if}>
+
+      </div>
+
+      <{if $show_rightblocks}>
+        <aside id="rightside_wrapper" class="grid_<{$rightcolumn_grid}> <{$rightcolumn_grid_extra_classes}>">
+          <div id="rightside">
+            <{foreach from=$xoBlocks.canvas_right item=block}>
+              <div id="rightside_block_<{$block.id}>" class="block">
+                <div class="block_inner">
+                  <{if $block.title != ''}>
+                    <h3><{$block.title}></h3>
+                  <{/if}>
+                  <{if $block.content}>
+                    <div class="rightblock_content block_content">
+                      <{$block.content}>
+                    </div>
+                  <{/if}>
+                </div>
+              </div>
+            <{/foreach}>
+          </div>
+        </aside>
+      <{/if}>
+
+    </div>
+  </div>
+
+  <{if $show_postscript && postscript_blockzone != ''}>
+    <div id="postscript_wrapper" class="clearfix">
+      <div id="postscript" class="container_<{$grid_columns}>">
+        <{if $postscript_block_id == ''}>
+          <{foreach from=$xoBlocks.$postscript_blockzone item=block}>
+            <div id="postscript_block_<{$block.id}>" class="block grid_<{$postscript_grid}> <{$postscript_grid_extra_classes}>">
+              <div class="block_inner">
+                <{if $show_postscript_block_titles && $block.title != ''}>
+                  <h3><{$block.title}></h3>
+                <{/if}>
+                <{if $block.content}>
+                  <div class="postscript_content block_content">
+                    <{$block.content}>
+                  </div>
+                <{/if}>
+              </div>
+            </div>
+          <{/foreach}>
+        <{else}>
+          <div id="single_postscript_block postscript_block_<{$preface_block_id}>" class="block grid_<{$postscript_grid}> <{$postscript_grid_extra_classes}>">
+            <div class="block_inner">
+              <{if $show_postscript_block_titles && $xoBlocks.$postscript_blockzone.$postscript_block_id.title}>
+                <h3><{$xoBlocks.$postscript_blockzone.$postscript_block_id.title}>}>
+              <{/if}>
+              <{if $xoBlocks.$postscript_blockzone.$postscript_block_id.content}>
+                <div class="postscript_content block_content">
+                  <{$xoBlocks.$postscript_blockzone.$postscript_block_id.content}>
+                </div>
+              <{/if}>
+            </div>
+          </div>
+        <{/if}>
+      </div>
+    </div>
+  <{/if}>
+</div>
