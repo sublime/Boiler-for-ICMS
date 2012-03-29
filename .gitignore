@@ -1,0 +1,16 @@
+.DS_Store
+skins/flowless/modules/.DS_Store
+*.DS_*
+.DS_Store*
+media/.DS_Store
+media/css/.DS_Store
+media/css/responsive/.DS_Store
+media/js/.DS_Store
+modules/.DS_Store
+skins/.DS_Store
+skins/flow/.DS_Store
+skins/flow/media/.DS_Store
+skins/flow/media/css/.DS_Store
+skins/flow/modules/.DS_Store
+skins/flowless/media/.DS_Store
+skins/flowless/media/css/.DS_Store

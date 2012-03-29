@@ -55,22 +55,22 @@
   <{if $include_button_css}>
     <link rel="stylesheet" href="<{$icms_imageurl}>media/css/buttons/buttons.css" />
   <{/if}>
-
+<{if !$use_less}>
   <link rel="stylesheet" href="<{$icms_imageurl}>skins/<{$skin}>/style.css" />
-
+<{/if}>
   <{if $enable_responsive}>
     <link rel="stylesheet" media='screen and (min-width: 0px) and (max-width: 760px)' href="<{$icms_imageurl}>media/css/responsive/min/mobile.css" />
-    <link rel='stylesheet' media='screen and (min-width: 0px) and (max-width: 760px)' href='<{$icms_imageurl}>skins/<{$skin}>/media/css/responsive/mobile.css<{if $use_less}>.less<{/if}>' />
+    <link rel='stylesheet' media='screen and (min-width: 0px) and (max-width: 760px)' href='<{$icms_imageurl}>skins/<{$skin}>/media/css/responsive/mobile.css' />
     <link rel='stylesheet' media='screen and (min-width: 760px) and (max-width: 980px)' href='<{$icms_imageurl}>media/css/responsive/min/720.css' />
-    <link rel='stylesheet' media='screen and (min-width: 760px) and (max-width: 9800px)' href='<{$icms_imageurl}>skins/<{$skin}>/media/css/responsive/narrow.css<{if $use_less}>.less<{/if}>' />
+    <link rel='stylesheet' media='screen and (min-width: 760px) and (max-width: 9800px)' href='<{$icms_imageurl}>skins/<{$skin}>/media/css/responsive/narrow.css' />
     <link rel='stylesheet' media='screen and (min-width: 980px)<{if $enable_wides}> and (max-width: 1280px)<{/if}>' href='<{$icms_imageurl}>media/css/responsive/min/960.css' />
-    <link rel='stylesheet' media='screen and (min-width: 980px)<{if $enable_wides}> and (max-width: 1280px)<{/if}>' href='<{$icms_imageurl}>skins/<{$skin}>/media/css/responsive/normal.css<{if $use_less}>.less<{/if}>' />
+    <link rel='stylesheet' media='screen and (min-width: 980px)<{if $enable_wides}> and (max-width: 1280px)<{/if}>' href='<{$icms_imageurl}>skins/<{$skin}>/media/css/responsive/normal.css' />
     <{if $enable_wides}>
       <link rel='stylesheet' media='screen and (min-width: 1280px) and (max-width: 1600px)' href='<{$icms_imageurl}>media/css/responsive/min/1200.css' />
       <link rel='stylesheet' media='screen and (min-width: 1600px) and (max-width: 1920px)' href='<{$icms_imageurl}>media/css/responsive/min/1560.css' />
       <link rel='stylesheet' media='screen and (min-width: 1920px) and (max-width: 2540px)' href='<{$icms_imageurl}>media/css/responsive/min/1920.css' />
       <link rel='stylesheet' media='screen and (min-width: 2540)' href='<{$icms_imageurl}>media/css/responsive/min/2520.css' />
-      <link rel='stylesheet' media='screen and (min-width: 1280px)' href='<{$icms_imageurl}>skins/<{$skin}>/media/css/responsive/wide.css<{if $use_less}>.less<{/if}>' />
+      <link rel='stylesheet' media='screen and (min-width: 1280px)' href='<{$icms_imageurl}>skins/<{$skin}>/media/css/responsive/wide.css' />
     <{/if}>
   <{else}>
     <{if $grid_columns != ''}>
